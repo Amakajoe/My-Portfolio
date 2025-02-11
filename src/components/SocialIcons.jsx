@@ -27,9 +27,9 @@ const SocialIcons = () => {
     }
   ]
   return (
-    <div className=' lg:flex lg:justify-center items-center justify-center space-x-4 sm:bt-6 block md:flex'>
+    <div className=' lg:flex lg:justify-center lg:items-center  items-center justify-center space-x-4 sm:bt-6 block md:flex'>
       {icons.map((icons, index) =>(
-        <a href = {icons.href} className='w-10 h-10 flex  bg-red-500   mt-10 items-center justify-center border-2 border-red-500 rounded-full text-red hover:bg-yellow-500 hover:text-black transition hover:shadow-[0_0_15px_3px_rgba(225,0,0,0.8)]'>{icons.Component}</a>
+        <a href = {icons.href} className='w-10 h-10 flex  bg-red-500   mt-10 items-center justify-center  border-2 border-red-500 rounded-full text-red hover:bg-yellow-500 hover:text-black transition hover:shadow-[0_0_15px_3px_rgba(225,0,0,0.8)]'>{icons.Component}</a>
       ))}
     </div>
   )

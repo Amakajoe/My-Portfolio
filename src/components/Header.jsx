@@ -32,30 +32,32 @@ const Header = () => {
   const [toggleIcon, setToggleIcon] = useState(false);
 
   const handleToggleIcon = () =>{
-    setToggleIcon(!toggleIcon)
-  }
+    setToggleIcon(!toggleIcon);
+  };
 
   return (
+    <div>
     <header className="fixed w-full  bg-black flex justify-between items-center p-4 z-50">
       <div className="text-3xl font-extrabold text-red-500 hover:scale-110 transition duration-300">
-        <Link to={"/"}>
+        <Link to={"/"} className="cursor-pointer">
           <FaReact size={30} />
         </Link>
       </div>
-      <ul className="flex ml-8 text-lg font-medium text-amber-400  border-transparent space-x-2 ">{
+      <ul className="flex ml-8 text-lg font-medium text-amber-400  border-transparent space-x-2  ">{
         data.map ((item, key)=>(
-          <li key ={key} className="hidden xl:flex md:flex lg:flex hover:underline hover:text-red-500 ">
+          <li key ={key} className="hidden md:flex md:flex-col md:w-[100%] md:left-[-110%] lg:flex hover:underline hover:text-red-500 ">
           <Link to = {item.to}>{item.label}</Link>
         </li>
 
         ))}
         
       </ul>
-      <div onClick={handleToggleIcon} className="md:hidden text-red-400 ">
-        {toggleIcon?<HiX size={30} /> : <FaBars size={30} />}</div>
+      <div onClick={handleToggleIcon} className="lg:hidden  text-red-400 ">
+        {toggleIcon ? <HiX size={30} /> : <FaBars siz />}</div>
 
       
     </header>
+    </div>
   );
 };
 

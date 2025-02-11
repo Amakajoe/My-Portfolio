@@ -3,8 +3,26 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import HeaderContentPage from "./HeaderContentPage";
 import SocialIcons from "./SocialIcons";
 import { Animate } from "react-simple-animate";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data Submitted:", formData);
+    alert("Message Sent Successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <section id="contact" className="p-[20px]">
       <HeaderContentPage
@@ -12,103 +30,104 @@ const Contact = () => {
         icon={<BsInfoCircleFill size={40} />}
       />
 
-      <div>
-        <Animate
-          play
-          duration={1}
-          delay={0}
-          start={{
-            transform: "translateX(-200px)",
-          }}
-          end={{
-            transform: "translateX(0px)",
-          }}
-        >
-          <h3 className="text-[#000] inline-block mb-[5px] font-bold text-[22px] leading-[1rem] tracking-[0.5px] relative uppercase p-[15px] border-b border-solid border-yellow-500  ">
-            Let's Talk
-          </h3>
-        </Animate>
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
+        <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+          <Animate
+            play
+            duration={1}
+            delay={0}
+            start={{
+              transform: "translateX(-200px)",
+            }}
+            end={{
+              transform: "translateX(0px)",
+            }}
+          >
+            <h2 className="text-2xl font-bold text-amber-500 text-center mb-4">
+              Contact Me
+            </h2>
+          </Animate>
 
-        <Animate
-          play
-          duration={1}
-          delay={0}
-          start={{
-            transform: "translateX(200px)",
-          }}
-          end={{
-            transform: "translateX(0px)",
-          }}
-        >
-          <div className="mt-[30px]">
-            <div className="lg:grid lg:grid-cols-2  grid-cols-1 gap=-[50px] lg:gap-[40px] lg:mb-[30px]">
-              <div className="relative ">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Animate
+              play
+              duration={1}
+              delay={0}
+              start={{
+                transform: "translateX(200px)",
+              }}
+              end={{
+                transform: "translateX(0px)",
+              }}
+            >
+              <div>
+                <label className="block text-black font-medium">Name</label>
                 <input
-                  required
+                  type="text"
                   name="name"
-                  type="text"
-                  className="w-[100%] border-2 border-solid border-yellow-500 p-[16px,12px] transition duration-500 ease-in-out bg-transparent relative"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your name"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <label
-                  htmlFor="name"
-                  className="font-medium absolute top-[7px] left-[12px] transition duration-200 ease-in-out text-black text-[16px]"
-                >
-                  Name
-                </label>
               </div>
 
               <div>
+                <label className="block text-black font-medium">
+                  Email Address
+                </label>
                 <input
-                  required
-                  name="email"
                   type="email"
-                  className="w-[100%] border-2 border-solid border-yellow-500 p-[16px,12px] transition duration-500 ease-in-out bg-transparent relative"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your email"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <label
-                  htmlFor="email"
-                  className="font-medium absolute lg:right-120 top-8 lg:top-1.5 transition duration-200 ease-in-out text-black text-[16px]"
-                >
-                  Email
-                </label>
               </div>
 
               <div>
-                <textarea
-                  required
-                  name="description"
-                  type="text"
-                  rows="5"
-                  className="w-[100%] border-2 border-solid border-yellow-500 p-[16px,12px] transition duration-500 ease-in-out bg-transparent relative"
-                />
-                <label
-                  htmlFor="description"
-                  className="font-medium absolute top-42 left-[12px] transition duration-200 ease-in-out text-black text-[16px]"
-                >
-                  Description
+                <label className="block text-black font-medium">
+                  Message
                 </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="4"
+                  placeholder="Type your message..."
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
               </div>
-            </div>
-            <button className="cursor-pointer p-[10px,70px] text-3xl bg-transparent text-[#000] border border-solid border-yellow-500 rounded-sm hover:bg-[#000] hover:text-red-500 hover:p-[30px,80px]">
-              Submit
-            </button>
-          </div>
-        </Animate>
-      </div>
 
-      <div>
-        <Animate
-          play
-          duration={1}
-          delay={0}
-          start={{
-            transform: "translateY(-200px)",
-          }}
-          end={{
-            transform: "translateY(0px)",
-          }}
-        >
-          <SocialIcons />
-        </Animate>
+              <button
+                type="submit"
+                className="w-full bg-yellow-500 text-white p-3 rounded-lg hover:bg-red-500 transition-all ease-in-out duration-300 "
+              >
+                Send Message
+              </button>
+            </Animate>
+          </form>
+
+          <div>
+            <Animate
+              play
+              duration={1}
+              delay={0}
+              start={{
+                transform: "translateY(-200px)",
+              }}
+              end={{
+                transform: "translateY(0px)",
+              }}
+            >
+              <SocialIcons />
+            </Animate>
+          </div>
+        </div>
       </div>
     </section>
   );
