@@ -52,8 +52,33 @@ const Header = () => {
         ))}
         
       </ul>
-      <div onClick={handleToggleIcon} className="lg:hidden  text-red-400 ">
-        {toggleIcon ? <HiX size={30} /> : <FaBars siz />}</div>
+      {/* <div onClick={handleToggleIcon} className="md:hidden  text-red-400 ">
+        {toggleIcon ? <HiX size={30} /> : <FaBars size={30} />}</div> */}
+
+
+        {/* Mobile Menu Button (only visible on small screens) */}
+      <div onClick={handleToggleIcon} className="lg:hidden  text-red-400 cursor-pointer">
+        {toggleIcon ? <HiX size={30} /> : <FaBars size={30} />}
+      </div>
+
+      
+      <ul
+        className={` fixed top-0 left-0    bg-black  text-white flex flex-col items-center space-y-6 py-6 transition-transform ${
+          toggleIcon ? "translate-x-0" : "-translate-x-full"
+        } lg:hidden`}
+      >
+        {data.map((item, key) => (
+          <li key={key} >
+            <Link to={item.to}  onClick={() => setToggleIcon(false)}>
+              {item.label}
+            </Link>
+          </li>
+           ))}
+      </ul>
+
+
+
+
 
       
     </header>
