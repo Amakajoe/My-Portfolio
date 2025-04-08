@@ -74,13 +74,13 @@ const skillsData = [
     data:[
       {
         skillsName: "SQL",
-        percentage: "70"
+        percentage: "65"
 
       },
 
       {
         skillsName: "MONGO DB",
-        percentage: "85"
+        percentage: "70"
 
       },
     ],
