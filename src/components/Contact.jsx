@@ -61,7 +61,7 @@ const Contact = () => {
               }}
             >
               <div>
-                <label className="block text-black font-medium">Name</label>
+                <label className="block text-black font-medium mb-[10px]">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -74,7 +74,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-black font-medium">
+                <label className="block text-black font-medium m-[10px]">
                   Email Address
                 </label>
                 <input
@@ -89,7 +89,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-black font-medium">
+                <label className="block text-black font-medium m-[10px]">
                   Message
                 </label>
                 <textarea

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaBars, FaReact } from "react-icons/fa";
+import { FaBars, FaAmilia } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
@@ -39,7 +39,8 @@ const Header = () => {
       <header className="fixed w-full  bg-black flex justify-between items-center p-4 z-50">
         <div className="text-3xl font-extrabold text-red-500 hover:scale-110 transition duration-300">
           <Link to={"/"} className="cursor-pointer">
-            <FaReact size={30} />
+          
+            <FaAmilia size={40} />
           </Link>
         </div>
         <ul className="flex ml-8 text-lg font-medium text-amber-400  border-transparent space-x-2  ">

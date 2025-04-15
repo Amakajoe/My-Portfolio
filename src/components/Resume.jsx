@@ -46,7 +46,7 @@ const Data = {
       subTitle: "Global Trust Marine",
       description:
         "Servicing, Maintaining and Teasting Equipment to ensure they in good state.",
-      date: "2004-20205",
+      date: "2004-2005",
     },
   ],
   education: [
